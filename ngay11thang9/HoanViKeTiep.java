@@ -1,4 +1,4 @@
-package ngay12thang9;
+package ngay11thang9;
 
 import java.util.Scanner;
 
