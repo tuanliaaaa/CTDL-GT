@@ -12,7 +12,7 @@ public class TapConLienkePhiaTruoc {
        }  
        if(i==0)
        {
-            for(int j=k;j<=n;j++)
+            for(int j=n-k+1;j<=n;j++)
             {
                 System.out.print(j+" ");
             }

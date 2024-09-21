@@ -12,7 +12,6 @@ public class ToHopTiepTheo {
             System.out.println(k);
             return;
        }
-       
        System.out.println(Math.min(a[i+1]-a[i]-1,n-a[i]));
     }
     public static void main(String[] args) {

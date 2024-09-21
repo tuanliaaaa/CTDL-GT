@@ -29,10 +29,12 @@ public class PhanTichSo1 {
             a[j]=sum%ne;
         }
         System.out.print("(");
-        for( j=0;j<n;j++){
+        for( j=0;j<n-1;j++){
             if(a[j]!=0)System.out.print(a[j]+" ");
         }
-        System.out.println(")");
+        j=n-1;
+        if(a[j]!=0)System.out.print(a[j]);
+        System.out.print(")");
        
     }
     public static void main(String[] args) {
@@ -45,8 +47,9 @@ public class PhanTichSo1 {
             a[0]=n;
             for(int i=1;i<n;i++)a[i]=0;
             check=false;
-            System.out.println("("+n+")");
+            System.out.print("("+n+") ");
             while(!check)phanTichSo1(n,a);
+            System.out.println();
         }
     }
 }
