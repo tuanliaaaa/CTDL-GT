@@ -1,7 +1,7 @@
 package ngay17thang9;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class ChonSoTuMaTranVuongCapN {
     private static Boolean check=false;
@@ -40,6 +40,7 @@ public class ChonSoTuMaTranVuongCapN {
             b[i]=i+1;
         }
         check=true;
+        List<List<Integer>> answerList= new ArrayList<>();
         while (check) 
         {
             int sum=0;
@@ -48,11 +49,20 @@ public class ChonSoTuMaTranVuongCapN {
             }
             if(sum==k)
             {
-                for(int i=0;i<n;i++)
-                System.out.print(b[i]+" ");
-                System.out.println();
+                List<Integer> answer= new ArrayList<>();
+
+                for(int i=0;i<n;i++){
+                    answer.add(b[i]);
+                }
+                answerList.add(answer);
             }
             chonSoTuMaTranVuongCapN(n,b );
+        }
+        System.out.println(answerList.size());
+        for(List<Integer> answer:answerList)
+        {
+            for(Integer i:answer)System.out.print(i+" ");
+            System.out.println();
         }
     }
 }
