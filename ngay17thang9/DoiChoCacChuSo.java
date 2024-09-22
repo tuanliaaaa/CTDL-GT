@@ -14,7 +14,7 @@ public class DoiChoCacChuSo {
             StringBuffer b=new StringBuffer(sc.nextLine()); 
             char max;
             int dem=0;
-            for(int i=0;i<n;i++)
+            for(int i=0;i<b.length();i++)
             {
                 max=b.charAt(i);
                 int index=i;
