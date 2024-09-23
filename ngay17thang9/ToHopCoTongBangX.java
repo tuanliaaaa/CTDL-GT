@@ -10,7 +10,8 @@ public class ToHopCoTongBangX {
     {
         if(sum==0){
             System.out.print("[");
-            for(Integer i:c)System.out.print(i+" ");
+            for(int i=0;i<c.size()-1;i++)System.out.print(c.get(i)+" ");
+            System.out.print(c.get(c.size()-1));
             System.out.print("] ");
         }else
         for(int i=0;i<n;i++)
@@ -19,18 +20,16 @@ public class ToHopCoTongBangX {
             {
                 int x=sum-a[i];
                 if(x>=0){
-                    List<Integer> l= new ArrayList<>();
-                    l.addAll(c);
-                    l.add(a[i]);
-                    toHopCoTongBangX(a, x, l);
+                    c.add(a[i]);
+                    toHopCoTongBangX(a, x, c);
+                    c.remove(c.size()-1);
                 }
             }else if(a[i]>=c.get(c.size()-1)){
                 int x=sum-a[i];
                 if(x>=0){
-                    List<Integer> l= new ArrayList<>();
-                    l.addAll(c);
-                    l.add(a[i]);
-                    toHopCoTongBangX(a, x, l);
+                    c.add(a[i]);
+                    toHopCoTongBangX(a, x, c);
+                    c.remove(c.size()-1);
                 } 
             }
         }
