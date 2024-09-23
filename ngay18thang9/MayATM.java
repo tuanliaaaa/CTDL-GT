@@ -23,6 +23,7 @@ public class MayATM {
         int t =sc.nextInt();
         while(t-->0)
         {
+            min=100000;
             n=sc.nextInt();
             int k=sc.nextInt();
             int []a = new int[n];
@@ -30,7 +31,7 @@ public class MayATM {
             {
                 a[i]=sc.nextInt();
             }
-            mayATM(a,k,0,0);
+            mayATM(a,k,0,-1);
             System.out.println(min);
         }
     }

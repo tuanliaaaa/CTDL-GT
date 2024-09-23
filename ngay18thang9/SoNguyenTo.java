@@ -49,6 +49,7 @@ public class SoNguyenTo {
             int s=sc.nextInt();
            
             soNguyenTo(s,new ArrayList(),0);
+            System.out.println(l.size());
             for(int i=0;i<l.size();i++){
                 for(int j=0;j<n;j++)System.out.print(l.get(i).get(j)+" ");
                 System.out.println();
