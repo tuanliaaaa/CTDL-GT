@@ -3,19 +3,21 @@ package ngay11thang9;
 import java.util.Scanner;
 
 public class TapConKeTiep {
-     public static void tapConKeTiep(int n,int k, int []a)
+    public static void tapConKeTiep(int n,int k, int []a)
     {
-       int i=k-1;
-       while(i>0&&a[i]==n-k+i+1)i--;  
-       if(i==0)
-       {
-            for(int j=1;j<k+1;j++)
+        int i=k-1;
+        while(i>=0&&a[i]==n-k+i+1){
+            i--;  
+            if(i==-1)
             {
-                System.out.print(j+" ");
+                for(int j=1;j<k+1;j++)
+                {
+                    System.out.print(j+" ");
+                }
+                System.out.println();
+                return;
             }
-            System.out.println();
-            return;
-       }
+        }
        a[i]++;
        for(int j=1+i;j<k;j++)
        {
