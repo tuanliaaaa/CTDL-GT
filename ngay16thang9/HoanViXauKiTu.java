@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class HoanViXauKiTu {
     private static Boolean check=true;
-    public static void hoanViXauKiTu(StringBuffer a) 
+    public static void hoanViDaySo(int n, int[] a)
     {
-        int i=a.length()-2;
-        while(i>=-1&&a.charAt(i)>a.charAt(i+1)){
+        int i=n-2;
+        while(i>=0&&a[i]>a[i+1]){
             i--;
             if(i==-1)
             {
@@ -15,32 +15,35 @@ public class HoanViXauKiTu {
                 return;
             }
         }
-        int j=a.length()-1;
-        while(a.charAt(j)<a.charAt(i))j--;
-        char temp =a.charAt(i);
-        a.setCharAt(i, a.charAt(j));;
-        a.setCharAt(j,temp);
-        int r=i+1,g=a.length()-1;
+        int j=n-1;
+        while(a[j]<a[i])j--;
+        int temp =a[i];a[i]=a[j];a[j]=temp;
+        int r=i+1,g=n-1;
         while(r<g)
         {
-            temp =a.charAt(r);
-            a.setCharAt(r, a.charAt(g));
-            a.setCharAt(g, temp);
+            temp =a[r];a[r]=a[g];a[g]=temp;
             r++;
             g--;
-        } 
+        }
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t= sc.nextInt();
+        Scanner sc= new Scanner(System.in);
+        int t=sc.nextInt();
         sc.nextLine();
         while(t-->0)
         {
-            StringBuffer a= new StringBuffer(sc.nextLine());
+            String b=sc.nextLine();
+            int a[]= new int[b.length()];
+            for(int i=0;i<b.length();i++)
+            {
+                a[i]=i;
+            }
             check=true;
-            while(check){
-                System.out.print(a+" ");
-                hoanViXauKiTu(a);
+            while (check) 
+            {
+                for(int i=0;i<a.length;i++)System.out.print(b.charAt(a[i])+"");
+                System.out.print(" ");
+                hoanViDaySo(a.length, a);
             }
             System.out.println();
         }
