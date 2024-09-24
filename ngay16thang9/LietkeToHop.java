@@ -9,10 +9,12 @@ public class LietkeToHop {
     public static void lietkeToHop(int []b,int n,int k) 
     {
         int i=k-1;
-        while(i>=0&&b[i]==n-k+i+1)i--;
-        if(i==-1){
-            check=true;
-            return;
+        while(i>=0&&b[i]==n-k+i+1){
+            i--;
+            if(i==-1){
+                check=true;
+                return;
+            }
         }
         b[i]++;
         for(int j=i+1;j<k;j++)b[j]=b[j-1]+1;
