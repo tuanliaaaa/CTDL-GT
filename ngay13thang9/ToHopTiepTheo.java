@@ -6,12 +6,15 @@ public class ToHopTiepTheo {
     public static void toHopTiepTheo(int n,int k, int []a)
     {
        int i=k-1;
-       while(i>0&&a[i]==n-k+i+1)i--;  
-       if(i==0)
-       {
-            System.out.println(k);
-            return;
+       while(i>=0&&a[i]==n-k+i+1){
+            i--;  
+            if(i==-1)
+            {
+                System.out.println(k);
+                return;
+            }
        }
+       
        if(i==k-1){
         System.out.println(1);
         return;
