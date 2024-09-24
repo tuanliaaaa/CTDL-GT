@@ -35,11 +35,17 @@ public class DayConCoTongBangK {
             while (check)
             {
                 int sum=0;
-                for(int i=0;i<n;i++)if(a[i]!=0)sum+=b[i];
+                int fifnal=0;
+                for(int i=0;i<n;i++)
+                if(a[i]!=0)
+                {
+                    sum+=b[i];
+                    fifnal=i;
+                }
                 if(sum==k){
                     System.out.print("[");
-                    for(int i=0;i<n;i++)if(a[i]!=0)System.out.print(b[i]+" ");
-                    System.out.print("] ");
+                    for(int i=0;i<n;i++)if(a[i]!=0&&i!=fifnal)System.out.print(b[i]+" ");
+                    System.out.print(b[fifnal]+"] ");
                 }
                 dayConCoTongBangK(a);
             }
