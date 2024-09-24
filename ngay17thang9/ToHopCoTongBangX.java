@@ -47,6 +47,7 @@ public class ToHopCoTongBangX {
                 a[i]=sc.nextInt();
             }   
             toHopCoTongBangX(a,k,new ArrayList<>());
+            System.out.println();
         }
     }
 }
