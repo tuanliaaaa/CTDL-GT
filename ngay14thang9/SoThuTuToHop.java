@@ -1,47 +1,65 @@
 package ngay14thang9;
+
 import java.util.Scanner;
 
 public class SoThuTuToHop {
-
-    public static int combination(int n, int k) {
-        if (k > n) return 0;
-        if (k == 0 || k == n) return 1;
-        k = Math.min(k, n - k); // Tính C(n, k) = C(n, n-k) để tối ưu
-        int res = 1;
-        for (int i = 0; i < k; i++) {
-            res *= (n - i);
-            res /= (i + 1);
+    public static int count=1;
+    public static int []b;
+    public static Boolean check=true;
+    public static Boolean checkEqual(int []a)
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]!=b[i])return false;
         }
-        return res;
+        return true;
     }
-
-    // Hàm tính số thứ tự của tổ hợp
-    public static int combinationRank(int[] comb, int n, int k) {
-        int rank = 0;
-
-        for (int i = 0; i < k; i++) {
-            int ci = comb[i];
-            if (ci > 1) {
-                rank += combination(ci - 1, k - i); // Tính các tổ hợp nhỏ hơn
+    public static void soThuTuToHop(int n,int k, int []a)
+    {
+        int i=k-1;
+        while(i>=0&&a[i]==n-k+i+1){
+            i--;  
+            if(i==-1)
+            {
+                check=false;
+                return;
             }
         }
-        
-        return rank;
+       a[i]++;
+       for(int j=1+i;j<k;j++)
+       {
+        a[j]=a[j-1]+1;
+       }
+       if(checkEqual(a))
+       {
+        check=false;
+        return;
+       }
+       count++;
     }
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-
-        int[] comb = new int[k];
-        for (int i = 0; i < k; i++) {
-            comb[i] = sc.nextInt();
+        Scanner sc= new Scanner(System.in);
+        int t;
+        int n,k;
+        t=sc.nextInt();
+        while(t-->0)
+        {
+            n=sc.nextInt();
+            k=sc.nextInt();
+            int []a = new int[k];
+            b= new int[k];
+            count=1;
+            for(int i=0;i<k;i++){
+                b[i]=sc.nextInt();
+                a[i]=i+1;
+            }
+            check=true;
+            if(!checkEqual(a))
+            {
+                count++;
+                while(check)soThuTuToHop(n,k,a);
+            }
+            System.out.println(count);
         }
-
-        int rank = combinationRank(comb, n, k);
-        System.out.println( rank);
-
-        sc.close();
     }
 }
