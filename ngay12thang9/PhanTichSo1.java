@@ -29,12 +29,14 @@ public class PhanTichSo1 {
             a[j]=sum%ne;
         }
         System.out.print("(");
-        for( j=0;j<n-1;j++){
-            if(a[j]!=0)System.out.print(a[j]+" ");
+        j=0;
+        while(j<=n-2&&a[j+1]!=0)
+        {
+            System.out.print(a[j]+" ");
+            j++;
         }
-        j=n-1;
         if(a[j]!=0)System.out.print(a[j]);
-        System.out.print(")");
+        System.out.print(") ");
        
     }
     public static void main(String[] args) {

@@ -5,20 +5,21 @@ public class TapConLienkePhiaTruoc {
     public static void tapConLienkePhiaTruoc(int n,int k, int []a)
     {
        int i=k;
-       while(i>0)
+       while(i>=0)
        {
         if(a[i]>a[i-1]+1)break;
         i--;
+        if(i==-1)
+        {
+             for(int j=n-k+1;j<=n;j++)
+             {
+                 System.out.print(j+" ");
+             }
+             System.out.println();
+             return;
+        }
        }  
-       if(i==0)
-       {
-            for(int j=n-k+1;j<=n;j++)
-            {
-                System.out.print(j+" ");
-            }
-            System.out.println();
-            return;
-       }
+      
        a[i]--;
        for(int j=1+i;j<=k;j++)
        {
