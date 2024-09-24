@@ -7,10 +7,12 @@ public class DatTen2 {
     public static void datTen2(int a[],int n,int k)
     {
         int i=k-1;
-        while(i>=0&&a[i]==n-k+i+1)i--;
-        if(i==-1){
-            check=false;
-            return;
+        while(i>=0&&a[i]==n-k+i+1){
+            i--;
+            if(i==-1){
+                check=false;
+                return;
+            }
         }
         a[i]++;
         for(int j=i+1;j<k;j++)a[j]=a[j-1]+1;
