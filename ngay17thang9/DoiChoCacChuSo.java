@@ -14,19 +14,20 @@ public class DoiChoCacChuSo {
             StringBuffer b=new StringBuffer(sc.nextLine()); 
             char max;
             int dem=0;
-            for(int i=0;i<b.length();i++)
+            for(int i=0;i<b.length()-1;i++)
             {
                 max=b.charAt(i);
                 int index=i;
                 for(int j=i+1;j<b.length();j++)
                 {
-                    if(max<b.charAt(j))
+                    if(max<=b.charAt(j))
                     {
                         max=b.charAt(j);
                         index=j;
                     }
                 }
                 if(max>b.charAt(i)){
+                    System.out.println(index+" ");
                     char temp=b.charAt(i);
                     b.setCharAt(i, b.charAt(index));
                     b.setCharAt(index, temp);
