@@ -4,28 +4,32 @@ import java.util.Scanner;
 public class TapConLienkePhiaTruoc {
     public static void tapConLienkePhiaTruoc(int n,int k, int []a)
     {
-       int i=k;
-       while(i>=0)
+       int i=k-1;
+       while(i>=0&&a[i]==a[i-1]+1)
        {
-        if(a[i]>a[i-1]+1)break;
         i--;
-        if(i==-1)
+        if(i==0)
         {
-             for(int j=n-k+1;j<=n;j++)
-             {
-                 System.out.print(j+" ");
-             }
-             System.out.println();
-             return;
+            if(a[i]==1){
+                for(int j=n-k+1;j<=n;j++)
+                {
+                    System.out.print(j+" ");
+                }
+                System.out.println();
+                return;
+            }else{
+                break;
+            }
+            
         }
        }  
       
        a[i]--;
-       for(int j=1+i;j<=k;j++)
+       for(int j=i+1;j<k;j++)
        {
-            a[j]=n-k+j;
+            a[j]=n-k+j+1;
        }
-       for(int j=1;j<=k;j++)
+       for(int j=0;j<k;j++)
        {
             System.out.print(a[j]+" ");
        }
@@ -39,9 +43,9 @@ public class TapConLienkePhiaTruoc {
         {
             int n,k;
             n=sc.nextInt();k=sc.nextInt();
-            int []a = new int[k+1];
+            int []a = new int[k];
             a[0]=0;
-            for(int i=1;i<=k;i++)a[i]=sc.nextInt();
+            for(int i=0;i<k;i++)a[i]=sc.nextInt();
             tapConLienkePhiaTruoc(n, k, a);
         }
     }
