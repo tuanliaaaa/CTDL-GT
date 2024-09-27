@@ -27,7 +27,6 @@ public class DoiChoCacChuSo {
                     }
                 }
                 if(max>b.charAt(i)){
-                    System.out.println(index+" ");
                     char temp=b.charAt(i);
                     b.setCharAt(i, b.charAt(index));
                     b.setCharAt(index, temp);
