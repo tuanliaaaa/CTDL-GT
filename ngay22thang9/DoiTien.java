@@ -15,8 +15,9 @@ public class DoiTien {
             {
                 if(a[i]<=n)
                 {
-                    n-=a[i];
-                    dem++;
+                    int m=n/a[i];
+                    n-=a[i]*m;
+                    dem+=m;
                 }else i++;
             }    
             System.out.println(dem);
