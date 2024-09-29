@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class TimMax {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        int l=10^9*7;
+        int l=1000000007;
         int t=sc.nextInt();
         while (t-->0) 
         {
@@ -20,7 +20,7 @@ public class TimMax {
             {
                 sum+=((a[i]*i)%l);
             }
-            System.out.println(sum%l);
+            System.out.println(sum);
         }
     }
 }
