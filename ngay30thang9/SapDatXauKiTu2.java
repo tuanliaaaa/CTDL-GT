@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class SapDatXauKiTu2 {
-    public static Boolean sapXepXauKiTu1(String a) {
+    public static Boolean sapXepXauKiTu2(String a,int o) {
         Map<Character,Integer> n = new HashMap<Character,Integer>();
         int max=0;
         for(int i=0;i<a.length();i++)
@@ -14,7 +14,7 @@ public class SapDatXauKiTu2 {
             n.put(a.charAt(i),m+1);
             max=Math.max(max, m+1);
         }
-        if (max <= (a.length() + 1) / 2) {
+        if (max <= (a.length() + 1) / o) {
             return true;
         } 
         return false;
@@ -27,7 +27,8 @@ public class SapDatXauKiTu2 {
             int n=sc.nextInt();
             sc.nextLine();
             String a=sc.nextLine();
-                
+            if(sapXepXauKiTu2(a,n))System.out.println(1);
+            else System.out.println(-1);
         }
     }
 }
