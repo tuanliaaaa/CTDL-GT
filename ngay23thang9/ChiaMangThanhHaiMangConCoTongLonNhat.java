@@ -15,6 +15,7 @@ public class ChiaMangThanhHaiMangConCoTongLonNhat {
             int []a= new int[n];
             for(int i=0;i<n;i++) a[i]=sc.nextInt();
             Arrays.sort(a);
+            k=Math.min(n-k, k);
             int sum=0;
             for(int i=0;i<k;i++)sum-=a[i];
             for(int i=k;i<n;i++)sum+=a[i];
