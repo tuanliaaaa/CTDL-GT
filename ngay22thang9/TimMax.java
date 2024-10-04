@@ -18,9 +18,9 @@ public class TimMax {
             int sum=0;
             for(int i=0;i<n;i++)
             {
-                sum=sum%l+((a[i]*i)%l);
+                sum+=((a[i]*i)%l);
             }
-            System.out.println(sum%l);
+            System.out.println(sum);
         }
     }
 }
