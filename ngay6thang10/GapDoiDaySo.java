@@ -5,33 +5,26 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GapDoiDaySo {
-    private static  int n=0,k=0;
-    private static int kq=0;
 
-    public static void gapDoiDaySo(List<Integer> a,int i) {
-        if(i==n+1){
-            kq=a.get(k-1);
-            return;
+    public static int gapDoiDaySo(int n,int k) {
+        int mid= (int) (Math.pow(2,n)/2)-1;
+        if(k-1==mid){
+            return n;
         }
-        List<Integer> b = new ArrayList<>();
-        b.addAll(a);
-        b.add(i);
-        b.addAll(a);
-        gapDoiDaySo(b, i+1);
-        
+        if(k-1<mid){
+            return gapDoiDaySo(n-1, k);
+        }else{
+            return gapDoiDaySo(n-1, k-mid+1);
+        }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t=sc.nextInt();
         while (t-->0)
         {
-             n=sc.nextInt();
-             k=sc.nextInt();    
-            
-            List<Integer> a = new ArrayList<>();
-            a.add(1);
-            gapDoiDaySo(a,2);
-            System.out.println(kq);
+            int n=sc.nextInt();
+            int k=sc.nextInt();    
+            System.out.println(gapDoiDaySo(n, k));
         }
     }
 }
