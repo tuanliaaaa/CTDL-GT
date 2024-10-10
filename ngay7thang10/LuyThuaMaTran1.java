@@ -13,7 +13,7 @@ public class LuyThuaMaTran1 {
             {
                 c[i][j] = 0L;
                 for (int k = 0; k < a.length; k++) {
-                    c[i][j] =((c[i][j]%l)+ ((a[i][k]%l) * (b[k][j]%l)))%l;
+                    c[i][j] =((c[i][j]%l)+ (((a[i][k]%l) * (b[k][j]%l)))%l)%l;
                 }
             }
         }
