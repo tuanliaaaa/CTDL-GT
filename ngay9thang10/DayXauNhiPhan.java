@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class DayXauNhiPhan {
     private static Long []a;
     public static int dayXauNhiPhan(int n,Long k) {
-        if(k==1)return 0;
-        if(k==2)return 1;
+        if(n==1)return 0;
+        if(n==2)return 1;
         if(k<=a[n-2])return dayXauNhiPhan(n-2, k);
         else return dayXauNhiPhan(n-1, k-a[n-2]);
     }
