@@ -14,7 +14,7 @@ public class GapDoiDaySo {
         if(k-1<mid){
             return gapDoiDaySo(n-1, k);
         }else{
-            return gapDoiDaySo(n-1, k-mid+1);
+            return gapDoiDaySo(n-1, k-mid-1);
         }
     }
     public static void main(String[] args) {
