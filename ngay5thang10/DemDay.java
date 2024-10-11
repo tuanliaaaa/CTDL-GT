@@ -3,7 +3,7 @@ package ngay5thang10;
 import java.util.Scanner;
 
 public class DemDay {
-    private static Long l=1000000007L;
+    private static Long l=123456789L;
     public static Long demDay(Long n,Long k) {
         if(k==0)return 1L;
         Long m=demDay(n, k/2)%l;
