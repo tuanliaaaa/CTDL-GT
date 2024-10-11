@@ -12,7 +12,7 @@ public class KyTuThuKTrongXau {
         if(k-1<mid){
             return kyTuThuKTrongXau(n-1, k);
         }else{
-            return kyTuThuKTrongXau(n-1, k-mid+1);
+            return kyTuThuKTrongXau(n-1, k-mid-1);
         }
     }
 
